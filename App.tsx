@@ -1,10 +1,14 @@
-import React from "react";
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { StyleSheet } from "react-native";
+import Paper from './src/components/notifications/Paper';
 import Toast from "./src/components/notifications/Toast";
 
 export default function App() {
   return (
-    <Toast />
+    <SafeAreaProvider>
+      <Paper />
+      <Toast />
+    </SafeAreaProvider>
   );
 }
 
