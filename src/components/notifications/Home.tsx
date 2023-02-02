@@ -1,7 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useRef, useEffect } from "react";
 import { StyleSheet, Text, View, TextInput } from "react-native";
-
 import { ToastProvider, useToast } from "react-native-toast-notifications";
 
 const Home = () => {
