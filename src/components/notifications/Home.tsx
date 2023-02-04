@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   test: {
-    fontSize: 16,
+    fontSize: 14,
     marginTop: 10,
   },
 });
