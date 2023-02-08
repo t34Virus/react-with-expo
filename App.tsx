@@ -1,10 +1,12 @@
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { StyleSheet } from "react-native";
 import Carousel from './src/components/carousel/Carousel';
+import PinchNZoom from './src/components/images/PinchNZoom';
+
 export default function App() {
   return (
     <SafeAreaProvider>
-      <Carousel />
+      <PinchNZoom />
     </SafeAreaProvider>
   );
 }

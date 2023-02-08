@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Image } from 'react-native';
 import PagerView from 'react-native-pager-view';
 import Paper from '../../components/notifications/Paper';
 import Toast from "../../components/notifications/Toast";
-import ImageResize from '../../components/images/ImageResizer';
+import PinchNZoom from '../images/PinchNZoom';
 import ImageManipulator from '../../components/images/ExpoImageManipulator';
 
 export default function Carousel() {
-	const [currentPage, setCurrentPage] = useState(0);
+	const [currentPage, setCurrentPage] = useState(3);
   return (
     <View style={styles.viewPager}>
       <PagerView 
@@ -28,11 +28,13 @@ export default function Carousel() {
 		    <Toast />
         </View>
 		<View style={styles.page} key="4">
-        	<Text style={styles.text}>Pdf page</Text>
+        	<Text style={styles.text}>Pinch n Zoom page</Text>
+			<PinchNZoom />
         </View>
       </PagerView>
 		<Text style={styles.cta}>
-			{currentPage !== 0 && '⬅⬅'}  ☝ Swipe ☝  {currentPage !== 3 && '➡➡'} 
+			{currentPage !== 3 && '⬅ Left ⬅'}  
+			☝Swipe☝  {currentPage !== 0 && '➡ Right ➡'} 
 		</Text>
     </View>
   );
@@ -56,5 +58,8 @@ const styles = StyleSheet.create({
 	bottom: 20,
 	width: '100%',
 	textAlign: 'center',
+  },
+  image: {
+	// width: '75%'
   }
 });
