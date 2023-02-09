@@ -14,7 +14,7 @@ export default function Paper() {
   return (
 	<View style={styles.container}>
 	{/* <Text>yo mama</Text> */}
-		<Button onPress={onTogglePearBar}>{visiblePear ? 'HidePear' : 'ShowPear'}</Button>
+		<Button onPress={onTogglePearBar}>{visiblePear ? 'Hide Pear' : 'Show Pear'}</Button>
 		<Snackbar
 			visible={visiblePear}
 			onDismiss={onDismissPearBar}
@@ -26,7 +26,7 @@ export default function Paper() {
 			}}>
 			🍐Your Pears🍐
 		</Snackbar>
-		<Button onPress={onToggleAppleBar}>{visibleApple ? 'HideApple' : 'ShowApple'}</Button>
+		<Button onPress={onToggleAppleBar}>{visibleApple ? 'Hide Apple' : 'Show Apple'}</Button>
 		<Snackbar 
 			wrapperStyle={{ top: 50 }}
 			visible={visibleApple}

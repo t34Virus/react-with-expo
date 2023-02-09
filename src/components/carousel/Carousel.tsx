@@ -7,7 +7,7 @@ import PinchNZoom from '../images/PinchNZoom';
 import ImageManipulator from '../../components/images/ExpoImageManipulator';
 
 export default function Carousel() {
-	const [currentPage, setCurrentPage] = useState(3);
+	const [currentPage, setCurrentPage] = useState(0);
   return (
     <View style={styles.viewPager}>
       <PagerView 
@@ -15,26 +15,26 @@ export default function Carousel() {
 		initialPage={currentPage}
 		onPageSelected={e => setCurrentPage(e.nativeEvent.position)}
 		>
+        {/* <View style={styles.page} key="1">
+			<Text style={styles.text}>Override OS</Text>
+			<PinchNZoom />
+        </View> */}
         <View style={styles.page} key="1">
-        	<Text style={styles.text}>Resize page</Text>
-			<ImageManipulator />
-        </View>
-        <View style={styles.page} key="2">
-        	<Text style={styles.text}>Paper page</Text>
+        	<Text style={styles.text}>Paper Notifications</Text>
 		    <Paper />
         </View>
-        <View style={styles.page} key="3">
-        	<Text style={styles.text}>Toast page</Text>
+        <View style={styles.page} key="2">
+        	<Text style={styles.text}>Toast Notifications</Text>
 		    <Toast />
         </View>
-		<View style={styles.page} key="4">
-        	<Text style={styles.text}>Pinch n Zoom page</Text>
-			<PinchNZoom />
+		<View style={styles.page} key="3">
+			<Text style={styles.text}>Resize Image</Text>
+			<ImageManipulator />
         </View>
       </PagerView>
 		<Text style={styles.cta}>
-			{currentPage !== 3 && '⬅ Left ⬅'}  
-			☝Swipe☝  {currentPage !== 0 && '➡ Right ➡'} 
+			{currentPage !== 3 && '⬅ Left'}
+			☝Swipe☝{currentPage !== 0 && 'Right ➡'} 
 		</Text>
     </View>
   );

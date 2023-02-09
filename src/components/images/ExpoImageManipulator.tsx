@@ -46,22 +46,23 @@ export default function ImageManipulator() {
   
   return (
     <View style={styles.container}>
-      <Text style={styles.welcome}>Image Resizer example</Text>
       <TouchableOpacity style={styles.button} onPress={selectImage}>
         <Text>Select an image</Text>
       </TouchableOpacity>
-      <Text style={styles.instructions}>This is the original image:</Text>
       {image ? (
-        <Image
-          style={styles.image}
-          source={{ uri: image.uri }}
-          resizeMode="contain"
-        />
+        <View>
+          <Text style={styles.instructions}>This is the original image:</Text>
+          <Image
+            style={styles.image}
+            source={{ uri: image.uri }}
+            resizeMode="contain"
+          />
+          <Button title="Resize" onPress={resize} />
+          <Text></Text>
+          <Button title="Save" onPress={saveImage} />
+        </View>
       ) : null}
-      {ready && image && _renderImage()}
-      <Button title="Resize" onPress={resize} />
-      <Text></Text>
-      <Button title="Save" onPress={saveImage} />
+      { ready && image && _renderImage() }
     </View>
   );
 }
