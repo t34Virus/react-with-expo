@@ -20,11 +20,11 @@ export default function Carousel() {
 			<PinchNZoom />
         </View> */}
         <View style={styles.page} key="1">
-        	<Text style={styles.text}>Paper Notifications</Text>
+        	{/* <Text style={styles.text}>Paper Notifications</Text> */}
 		    <Paper />
         </View>
         <View style={styles.page} key="2">
-        	<Text style={styles.text}>Toast Notifications</Text>
+        	{/* <Text style={styles.text}>Toast Notifications</Text> */}
 		    <Toast />
         </View>
 		<View style={styles.page} key="3">
@@ -32,9 +32,14 @@ export default function Carousel() {
 			<ImageManipulator />
         </View>
       </PagerView>
-		<Text style={styles.cta}>
-			{currentPage !== 3 && '⬅ Left'}
-			☝Swipe☝{currentPage !== 0 && 'Right ➡'} 
+		<Text style={[styles.cta, styles.left]}>
+			{currentPage !== 2 && '⬅ Left'}
+			{/* ☝Swipe☝ */}
+		</Text>
+		<Text style={[styles.cta, styles.right]}>
+			
+			{/* ☝Swipe☝ */}
+			{currentPage !== 0 && 'Right ➡'} 
 		</Text>
     </View>
   );
@@ -55,9 +60,15 @@ const styles = StyleSheet.create({
   },
   cta: {
 	position: 'absolute',
-	bottom: 20,
-	width: '100%',
-	textAlign: 'center',
+	bottom: '50%',
+	// width: '100%',
+	// textAlign: 'center',
+  },
+  right: {
+	right: 0,
+  },
+  left: {
+	left: 0,
   },
   image: {
 	// width: '75%'

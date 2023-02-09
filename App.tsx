@@ -12,10 +12,11 @@ function CarouselComponent({navigation}) {
   return (
     <SafeAreaProvider>
       <Button
+        style={styles.button}
         onPress={() =>
           navigation.navigate('PinchNZoom')
         }
-        title="Pinch N Zoom"
+        title="Navigate to Pinch N Zoom"
       />
       <Carousel />
     </SafeAreaProvider>
@@ -25,6 +26,7 @@ function PinchNZoomComponent({navigation}) {
   return (
     <SafeAreaProvider>
       <Button
+        style={styles.button}
         onPress={() => navigation.goBack()} 
         title="Go Back"
       />
@@ -54,5 +56,11 @@ export const styles = StyleSheet.create({
   test: {
     fontSize: 14,
     marginTop: 10,
+  },
+  button: {
+    backgroundColor: '#2596be',
+    paddingHorizontal: 30,
+    paddingVertical: 20,
+    borderRadius: 10,
   },
 });

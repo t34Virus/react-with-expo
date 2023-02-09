@@ -28,7 +28,7 @@ export default function Paper() {
 		</Snackbar>
 		<Button onPress={onToggleAppleBar}>{visibleApple ? 'Hide Apple' : 'Show Apple'}</Button>
 		<Snackbar 
-			wrapperStyle={{ top: 50 }}
+			wrapperStyle={{ top: 0 }}
 			visible={visibleApple}
 			onDismiss={onDismissAppleBar}
 			action={{
